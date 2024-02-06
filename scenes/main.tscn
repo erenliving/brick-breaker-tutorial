@@ -10,20 +10,25 @@
 
 [node name="Paddle" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_by27v")]
 position = Vector2(0, 283)
+collision_layer = 2
 camera = NodePath("../Camera2D")
 
 [node name="Ball" parent="." instance=ExtResource("2_75ffr")]
 position = Vector2(0, 215)
+collision_mask = 14
 
 [node name="Walls" type="Node" parent="."]
 
 [node name="UpperWall" parent="Walls" instance=ExtResource("3_nog7p")]
 position = Vector2(0, -334)
+collision_layer = 4
 
 [node name="LeftWall" parent="Walls" instance=ExtResource("3_nog7p")]
 position = Vector2(-586, 0)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="RightWall" parent="Walls" instance=ExtResource("3_nog7p")]
 position = Vector2(586, 0)
 rotation = 1.5708
+collision_layer = 4
