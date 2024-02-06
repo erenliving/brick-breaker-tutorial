@@ -8,7 +8,7 @@ var camera_rect: Rect2
 var half_paddle_width: float
 var is_ball_started = false
 
-@export var speed = 200
+@export var speed = 400
 @export var camera: Camera2D
 
 @onready var collision_shape_2d = $CollisionShape2D
