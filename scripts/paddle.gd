@@ -15,6 +15,7 @@ var is_ball_started = false
 @onready var ball = $"../Ball" as Ball
 
 func _ready():
+	ball.life_lost.connect(on_ball_lost)
 	camera_rect = camera.get_viewport_rect()
 	half_paddle_width = collision_shape_2d.shape.get_rect().size.x / 2 * scale.x
 
@@ -42,3 +43,6 @@ func _process(delta):
 func _physics_process(delta):
 	#linear_velocity = speed * direction * delta
 	linear_velocity = speed * direction
+
+func on_ball_lost():
+	is_ball_started = false

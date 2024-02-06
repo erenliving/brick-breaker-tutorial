@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 class_name Ball
 
+signal life_lost
+
 const VELOCITY_LIMIT = 40
 
 var speed_up_factor = 1.05
@@ -39,7 +41,9 @@ func reset_ball():
 
 func on_life_lost():
 	lives -= 1
+	ui.set_lives(lives)
+	life_lost.emit()
 	if lives == 0:
-		pass
+		ui.game_over()
 	else:
 		reset_ball()
