@@ -46,3 +46,6 @@ func _physics_process(delta):
 
 func on_ball_lost():
 	is_ball_started = false
+
+func get_width():
+	return collision_shape_2d.shape.get_rect().size.x

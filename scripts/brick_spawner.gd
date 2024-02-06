@@ -6,8 +6,8 @@ class_name BrickSpawner
 const COLUMNS = 5
 const ROWS = 6
 
-@onready var ball = $Ball as Ball
-@onready var ui = $UI as UI
+@onready var ball = $"../Ball" as Ball
+@onready var ui = $"../UI" as UI
 
 @export var brick_scene: PackedScene
 @export var margin: Vector2 = Vector2(8, 8)
