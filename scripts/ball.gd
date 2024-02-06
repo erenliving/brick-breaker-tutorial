@@ -11,6 +11,7 @@ var start_position: Vector2
 @export var ball_speed = 20
 @export var lives = 3
 @export var death_zone: DeathZone
+@export var ui: UI
 
 @onready var collision_shape_2d = $CollisionShape2D
 
