@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv24bwtlwyts4"]
+[gd_scene load_steps=5 format=3 uid="uid://dv24bwtlwyts4"]
 
 [ext_resource type="PackedScene" uid="uid://b1mi8bxsu4mvk" path="res://scenes/paddle.tscn" id="1_by27v"]
 [ext_resource type="PackedScene" uid="uid://dkxayraj1wq6q" path="res://scenes/ball.tscn" id="2_75ffr"]
 [ext_resource type="PackedScene" uid="uid://tyexg5alm0yy" path="res://scenes/wall.tscn" id="3_nog7p"]
+[ext_resource type="PackedScene" uid="uid://chucrhoap5jrr" path="res://scenes/death_zone.tscn" id="4_pt7mw"]
 
 [node name="Main" type="Node"]
 
@@ -13,9 +14,10 @@ position = Vector2(0, 283)
 collision_layer = 2
 camera = NodePath("../Camera2D")
 
-[node name="Ball" parent="." instance=ExtResource("2_75ffr")]
+[node name="Ball" parent="." node_paths=PackedStringArray("death_zone") instance=ExtResource("2_75ffr")]
 position = Vector2(0, 215)
 collision_mask = 14
+death_zone = NodePath("../DeathZone")
 
 [node name="Walls" type="Node" parent="."]
 
@@ -32,3 +34,6 @@ collision_layer = 4
 position = Vector2(586, 0)
 rotation = 1.5708
 collision_layer = 4
+
+[node name="DeathZone" parent="." instance=ExtResource("4_pt7mw")]
+position = Vector2(0, 375)
