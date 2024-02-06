@@ -17,7 +17,11 @@ func _ready():
 	start_position = position
 
 func _physics_process(delta):
-	move_and_collide(velocity * ball_speed * delta)
+	var collision = move_and_collide(velocity * ball_speed * delta)
+	if !collision:
+		return
+	
+	velocity = velocity.bounce((collision.get_normal()))
 
 func start_ball():
 	position = start_position
